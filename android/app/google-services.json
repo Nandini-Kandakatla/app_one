@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1054653541610",
+    "project_id": "instagram-3c5b6",
+    "storage_bucket": "instagram-3c5b6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1054653541610:android:b397434d2c51d53e05fb93",
+        "android_client_info": {
+          "package_name": "com.canadore.app_one"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDCi_CMIF3IXtWfQ9bDQdq0YzJwKCXgQFc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
