@@ -1,5 +1,9 @@
-package com.canadore.app_one.app_one
+package com.canadore.app_one
 
-import io.flutter.embedding.android.FlutterActivity
+class MainActivity: FlutterActivity(){
 
-class MainActivity: FlutterActivity()
+}
+
+open class FlutterActivity {
+
+}
