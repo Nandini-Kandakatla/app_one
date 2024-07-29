@@ -38,10 +38,10 @@ class User{
         username:snapshot['username'],
         uid:snapshot['uid'],
         email:snapshot['email'],
-        photoUrl:snapshot['photoUrl'],
+        photoUrl:snapshot['photoUrl'] ?? "",
         bio:snapshot['bio'],
-        followers:snapshot['followers'],
-        following:snapshot['following'],
+        followers:snapshot['followers'].cast<String>(),
+        following:snapshot['following'].cast<String>(),
     );
   }
 }

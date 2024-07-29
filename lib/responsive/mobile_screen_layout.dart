@@ -1,5 +1,6 @@
 
 import 'package:app_one/utils/colors.dart';
+import 'package:app_one/utils/global_variables.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -32,14 +33,19 @@ void navigationTapped(int page){
   pageController.jumpToPage(page);
 
 }
+void onPageChanged(int page){
+  setState(() {
+    _page=page;
+  });
+}
+
   @override
   Widget build(BuildContext context) {
 
     return  Scaffold(
       body: PageView(
-        children: [
-          Text('feed'  ),
-        ],
+        children: homeScreenItems,
+        physics: const NeverScrollableScrollPhysics(),
         controller: pageController,
         onPageChanged: onPageChanged,
       ),
