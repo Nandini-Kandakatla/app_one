@@ -63,9 +63,11 @@ class _LoginScreenState extends State<LoginScreen> {
 
   void navigateToSignup(){
     Navigator.of(context).push(
-      MaterialPageRoute(
-        builder: (context)=> const SignupScreen(),
-      ),
+
+        MaterialPageRoute(
+            builder: (context)=> const SignupScreen(),
+        ),
+
     );
   }
 
@@ -79,20 +81,25 @@ class _LoginScreenState extends State<LoginScreen> {
         child: Column(
           crossAxisAlignment:CrossAxisAlignment.center ,
           children: [
-            Flexible(child:Container(),flex:2),
-            //svg image
+
+          Flexible(child:Container(),flex:2),
+          //svg image
+
             SvgPicture.asset('assets/ic_instagram.svg',color:primaryColor,height: 64,),
             const SizedBox(height: 70),
 
             //text input field for email
-            TextFieldInput(
-              hintText: 'Enter your email',
-              textInputType: TextInputType.emailAddress,
-              textEditingController: _emailController,
-            ),
-            const SizedBox(
-              height:30,
-            ),
+
+             TextFieldInput(
+               hintText: 'Enter your email',
+               textInputType: TextInputType.emailAddress,
+               textEditingController: _emailController,
+             ),
+          const SizedBox(
+            height:30,
+           ),
+
+           
             //text input field for Passsword
             TextFieldInput(
               hintText: 'Enter your password',
@@ -107,48 +114,50 @@ class _LoginScreenState extends State<LoginScreen> {
             InkWell(
               onTap: loginUser,
               child: Container(
-                child: _isLoading ?const Center(
-                  child:CircularProgressIndicator(
-                    color:primaryColor,
-                  ),
-                )
-                    : const Text('Log In'),
-                width:double.infinity,
-                alignment: Alignment.center,
-                padding: const EdgeInsets.symmetric(vertical:12 ),
-                decoration: const ShapeDecoration(
-                    shape:RoundedRectangleBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(4),
-                      ),
+
+              child: _isLoading ?const Center(
+                child:CircularProgressIndicator(
+                  color:primaryColor,
+                ),
+              )
+              : const Text('Log In'),
+              width:double.infinity,
+              alignment: Alignment.center,
+              padding: const EdgeInsets.symmetric(vertical:12 ),
+              decoration: const ShapeDecoration(
+                  shape:RoundedRectangleBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(4),
                     ),
-                    color: Colors.blue),
-              ),
+                  ),
+              color: Colors.blue),
+            ),
             ),
             const SizedBox(
-              height:12,
+                height:12,
             ),
             Flexible(child:Container(),flex:2,
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Container(
-                  child: const Text("Don't have an account?"),
-                  padding:const EdgeInsets.symmetric(
-                    vertical: 8,
-                  ),
-                ),
-                GestureDetector(
-                  onTap: navigateToSignup ,
-                  child: Container(
-                    child: const Text("Sign Up",style: TextStyle(fontWeight: FontWeight.bold),),
-                    padding:const EdgeInsets.symmetric(
-                      vertical: 8,
-                    ),
-                  ),
-                ),
-              ],
-            )
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+         children: [
+        Container(
+       child: const Text("Don't have an account?"),
+       padding:const EdgeInsets.symmetric(
+         vertical: 8,
+           ),
+           ),
+           GestureDetector(
+             onTap: navigateToSignup ,
+             child: Container(
+                 child: const Text("Sign Up",style: TextStyle(fontWeight: FontWeight.bold),),
+                 padding:const EdgeInsets.symmetric(
+                   vertical: 8,
+                 ),
+             ),
+           ),
+   ],
+ )
+
             //transitioning to signing up
           ],
         ),
