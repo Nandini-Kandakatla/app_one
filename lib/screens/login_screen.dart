@@ -63,9 +63,11 @@ class _LoginScreenState extends State<LoginScreen> {
 
   void navigateToSignup(){
     Navigator.of(context).push(
+
         MaterialPageRoute(
             builder: (context)=> const SignupScreen(),
         ),
+
     );
   }
 
@@ -79,12 +81,15 @@ class _LoginScreenState extends State<LoginScreen> {
         child: Column(
           crossAxisAlignment:CrossAxisAlignment.center ,
           children: [
+
           Flexible(child:Container(),flex:2),
           //svg image
+
             SvgPicture.asset('assets/ic_instagram.svg',color:primaryColor,height: 64,),
             const SizedBox(height: 70),
 
             //text input field for email
+
              TextFieldInput(
                hintText: 'Enter your email',
                textInputType: TextInputType.emailAddress,
@@ -93,6 +98,8 @@ class _LoginScreenState extends State<LoginScreen> {
           const SizedBox(
             height:30,
            ),
+
+           
             //text input field for Passsword
             TextFieldInput(
               hintText: 'Enter your password',
@@ -107,6 +114,7 @@ class _LoginScreenState extends State<LoginScreen> {
             InkWell(
               onTap: loginUser,
               child: Container(
+
               child: _isLoading ?const Center(
                 child:CircularProgressIndicator(
                   color:primaryColor,
@@ -149,6 +157,7 @@ class _LoginScreenState extends State<LoginScreen> {
            ),
    ],
  )
+
             //transitioning to signing up
           ],
         ),

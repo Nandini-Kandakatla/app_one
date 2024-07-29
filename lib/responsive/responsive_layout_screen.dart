@@ -1,5 +1,8 @@
 import 'package:app_one/providers/user_provider.dart';
+
 import 'package:app_one/utils/global_variables.dart';
+
+
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -27,12 +30,15 @@ class _ResponsiveLayoutState extends State<ResponsiveLayout> {
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(
+
         builder: (context,constraints){
           if(constraints.maxWidth>webScreenSize) {
             return widget.webScreenLayout;
           }
          return widget.mobileScreenLayout;
           },
+
+     
     );
   }
 }
