@@ -1,9 +1,8 @@
-import 'dart:ui';
 
 import 'package:app_one/screens/signup_screen.dart';
 import 'package:app_one/utils/colors.dart';
+import 'package:app_one/utils/global_variables.dart';
 import 'package:app_one/utils/utils.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -63,11 +62,9 @@ class _LoginScreenState extends State<LoginScreen> {
 
   void navigateToSignup(){
     Navigator.of(context).push(
-
         MaterialPageRoute(
             builder: (context)=> const SignupScreen(),
         ),
-
     );
   }
 
@@ -76,20 +73,20 @@ class _LoginScreenState extends State<LoginScreen> {
     return Scaffold(
       body: SafeArea
         (child:Container(
-        padding: EdgeInsets.symmetric(horizontal: 32),
+        padding:MediaQuery.of(context).size.width>webScreenSize
+            ?  EdgeInsets.symmetric(
+            horizontal:MediaQuery.of(context).size.width/3)
+            : const EdgeInsets.symmetric(horizontal: 32),
         width: double.infinity,
         child: Column(
           crossAxisAlignment:CrossAxisAlignment.center ,
           children: [
-
-          Flexible(child:Container(),flex:2),
+          Flexible(flex:2, child:Container()),
           //svg image
-
             SvgPicture.asset('assets/ic_instagram.svg',color:primaryColor,height: 64,),
             const SizedBox(height: 70),
 
             //text input field for email
-
              TextFieldInput(
                hintText: 'Enter your email',
                textInputType: TextInputType.emailAddress,
@@ -98,8 +95,6 @@ class _LoginScreenState extends State<LoginScreen> {
           const SizedBox(
             height:30,
            ),
-
-           
             //text input field for Passsword
             TextFieldInput(
               hintText: 'Enter your password',
@@ -114,13 +109,6 @@ class _LoginScreenState extends State<LoginScreen> {
             InkWell(
               onTap: loginUser,
               child: Container(
-
-              child: _isLoading ?const Center(
-                child:CircularProgressIndicator(
-                  color:primaryColor,
-                ),
-              )
-              : const Text('Log In'),
               width:double.infinity,
               alignment: Alignment.center,
               padding: const EdgeInsets.symmetric(vertical:12 ),
@@ -130,34 +118,39 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                   ),
               color: Colors.blue),
+              child: _isLoading ?const Center(
+                child:CircularProgressIndicator(
+                  color:primaryColor,
+                ),
+              )
+              : const Text('Log In'),
             ),
             ),
             const SizedBox(
                 height:12,
             ),
-            Flexible(child:Container(),flex:2,
+            Flexible(flex:2,child:Container(),
             ),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
          children: [
         Container(
-       child: const Text("Don't have an account?"),
        padding:const EdgeInsets.symmetric(
          vertical: 8,
            ),
+       child: const Text("Don't have an account?"),
            ),
            GestureDetector(
              onTap: navigateToSignup ,
              child: Container(
-                 child: const Text("Sign Up",style: TextStyle(fontWeight: FontWeight.bold),),
                  padding:const EdgeInsets.symmetric(
                    vertical: 8,
                  ),
+                 child: const Text("Sign Up",style: TextStyle(fontWeight: FontWeight.bold),),
              ),
            ),
    ],
  )
-
             //transitioning to signing up
           ],
         ),

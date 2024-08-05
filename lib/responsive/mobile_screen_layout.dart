@@ -5,7 +5,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class MobileScreenLayout extends StatefulWidget {
-  const MobileScreenLayout({Key? key}) : super(key: key);
+  const MobileScreenLayout({super.key});
 
   @override
   State<MobileScreenLayout> createState() => _MobileScreenLayoutState();
@@ -17,14 +17,14 @@ late PageController pageController;
 
 @override
   void initState() {
-    // TODO: implement initState
+
     super.initState();
     pageController =PageController();
   }
 
   @override
   void dispose() {
-    // TODO: implement dispose
+
     super.dispose();
     pageController.dispose();
   }
@@ -44,10 +44,10 @@ void onPageChanged(int page){
 
     return  Scaffold(
       body: PageView(
-        children: homeScreenItems,
         physics: const NeverScrollableScrollPhysics(),
         controller: pageController,
         onPageChanged: onPageChanged,
+        children: homeScreenItems,
       ),
       bottomNavigationBar: CupertinoTabBar(
         backgroundColor: mobileBackgroundColor,

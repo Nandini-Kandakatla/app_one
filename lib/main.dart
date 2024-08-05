@@ -3,7 +3,6 @@ import 'package:app_one/responsive/mobile_screen_layout.dart';
 import 'package:app_one/responsive/responsive_layout_screen.dart';
 import 'package:app_one/responsive/web_screen_layout.dart';
 import 'package:app_one/screens/login_screen.dart';
-import 'package:app_one/screens/signup_screen.dart';
 import 'package:app_one/utils/colors.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
