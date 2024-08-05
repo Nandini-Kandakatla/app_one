@@ -29,8 +29,7 @@ class AuthMethods {
       if (email.isNotEmpty &&
           password.isNotEmpty &&
           username.isNotEmpty &&
-          bio.isNotEmpty &&
-          file != null) {
+          bio.isNotEmpty) {
         // Registering user in auth with email and password
         UserCredential cred = await _auth.createUserWithEmailAndPassword(
           email: email,
@@ -84,5 +83,8 @@ class AuthMethods {
       res = err.toString();
     }
     return res;
+  }
+  Future<void>signOut()async{
+    await _auth.signOut();
   }
 }
